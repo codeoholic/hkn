@@ -31,7 +31,6 @@ class Home extends Component{
         return(
             <SafeAreaView style={[ styles.flex ]}>
                 <View>
-                    <Text>this is home</Text>
                     { this.render_stories() }
                 </View>
             </SafeAreaView>

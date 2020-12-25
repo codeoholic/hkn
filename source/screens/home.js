@@ -15,8 +15,9 @@ class Home extends Component{
         return(
             <TouchableOpacity key={ index } style={ styles.story } onPress={ () => this.props.navigation.navigate("WebViewCustom", { url: item.url }) } activeOpacity={ 0.9 }>
                 <Text style={ styles.font_16 }>{ item.title }</Text>
-                <View style={[ styles.margin_top_10, styles.split_view ]}>
-                    <Text style={ styles.font_12 }>{ item.score } points</Text>
+                <Text style={[ styles.font_12, styles.color_primary, styles.margin_top_5 ]}>{ item.url }</Text>
+                <View style={[ styles.margin_top_5, styles.split_view ]}>
+                    <Text style={ styles.font_12 }>{ item.score } points | by { item.by }</Text>
                     {/*CONVERTING UNIX TIMESTAMP WHICH IS IN SECONDS TO MILLISECONDS WHICH CAN BE PROCESSED BY JS*/}
                     <Text style={ styles.font_12 }>{ moment( item.time * 1000 ).fromNow() }</Text>
                 </View>
@@ -31,14 +32,14 @@ class Home extends Component{
                     renderItem={ this.render_story }
                     keyExtractor={ this.keyExtractor }
                     showsVerticalScrollIndicator={false}
-                    contentContainerStyle={{ marginTop: 20 }}
+                    contentContainerStyle={{ marginTop: 0 }}
                 />
             )
     }
     render(){
         return(
             <SafeAreaView style={[ styles.flex ]}>
-                <View>
+                <View style={[ styles.flex ]}>
                     { this.render_stories() }
                 </View>
             </SafeAreaView>

@@ -1,8 +1,12 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native';
 const WHITE = "#FFF";
 const GREY = "#DEDEDE";
+const PRIMARY = "#95196F";
 
 export default StyleSheet.create({
+	color_primary:{
+		color: PRIMARY
+	},
 	flex:{
 		flex: 1,
 		backgroundColor: WHITE	
@@ -15,6 +19,9 @@ export default StyleSheet.create({
 	},
 	margin_top_10:{
 		marginTop: 10
+	},
+	margin_top_5:{
+		marginTop: 5
 	},
 	split_view:{
         flexDirection:'row',

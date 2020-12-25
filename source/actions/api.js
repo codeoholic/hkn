@@ -20,6 +20,7 @@ export const fetch_top_stories = () => {
 }
 
 const fetch_top_stories_helper = async ({ dispatch }) => {
+    dispatch({ type: CHANGE_VARIABLE, payload: { key:'activity', value: true } });
 	const url = "https://hacker-news.firebaseio.com/v0/topstories.json";
     fetch(url)
         .then(response => response.json())
@@ -34,11 +35,13 @@ const fetch_top_stories_helper = async ({ dispatch }) => {
         		fetch(story_url)
         			.then(response => response.json())
         			.then(responseJson => {
-        				console.log( responseJson );
+        				// console.log( responseJson );
         				stories_object.push( responseJson );
-        				console.log( stories_object.length )
-        				if( stories_object.length === splice )
+        				// console.log( stories_object.length )
+        				if( stories_object.length === splice ){
         					dispatch({ type: CHANGE_VARIABLE, payload: { key:'stories', value: stories_object } });
+                            dispatch({ type: CHANGE_VARIABLE, payload: { key:'activity', value: false } });
+                        }
         			})
         	})
     	})

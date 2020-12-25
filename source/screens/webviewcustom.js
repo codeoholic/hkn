@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dimensions, Image, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Image, SafeAreaView, Share, Text, TouchableOpacity, View } from 'react-native';
 import { connect } from 'react-redux';
 import styles from '../styles';
 import { WebView } from 'react-native-webview';
@@ -16,7 +16,7 @@ class WebViewCustom extends Component{
         const WIDTH = Dimensions.get('window').width * this.state.progress;
         if( this.state.progress !== 1 )
             return(
-                <View style={{ height: 2, width: WIDTH, backgroundColor: "#3C2F8E" }}/>
+                <View style={{ height: 2, width: WIDTH, backgroundColor: "#95196F" }}/>
             )
     }
     render(){

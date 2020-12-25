@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Easing, ActivityIndicator, Animated, SafeAreaView, Share, Text, TouchableOpacity, View } from 'react-native';
+import { Easing, ActivityIndicator, Animated, Image, SafeAreaView, Share, Text, TouchableOpacity, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { connect } from 'react-redux';
@@ -29,7 +29,7 @@ const App = ({ activity, url }) => {
     function share(){
         return(
             <TouchableOpacity activeOpacity={ 0.9 } onPress={ () => onShare() }>
-                <Text>share</Text>
+                <Image source={require("./assets/share.png")} style={{width: 20, height: 20}}/>
             </TouchableOpacity>
         )
     }

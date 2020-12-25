@@ -14,8 +14,8 @@ const Stack = createStackNavigator();
 const App = ({ activity, url }) => {
     
     async function onShare(){
+        console.log( url );
         await Share.share({
-            message: 'Share HKN Story',
             url: url
         });
     }

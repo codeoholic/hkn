@@ -3,6 +3,9 @@ import { Dimensions, Image, SafeAreaView, Share, Text, TouchableOpacity, View } 
 import { connect } from 'react-redux';
 import styles from '../styles';
 import { WebView } from 'react-native-webview';
+import {
+    change_variable
+} from '../actions';
 
 class WebViewCustom extends Component{
     constructor(props) {
@@ -11,6 +14,7 @@ class WebViewCustom extends Component{
             url : this.props.route.params.url,
             progress : 0
         };
+        this.props.change_variable( 'url', this.props.route.params.url);
     }
     render_progress(){
         const WIDTH = Dimensions.get('window').width * this.state.progress;
@@ -30,4 +34,7 @@ class WebViewCustom extends Component{
         )
     }
 }
-export default connect( null )( WebViewCustom );
+
+export default connect( null, {
+    change_variable
+} )( WebViewCustom );

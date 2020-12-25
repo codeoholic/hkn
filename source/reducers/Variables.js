@@ -3,7 +3,9 @@ const INITIAL_STATE = {
 	
     activity: false,
 
-    stories: []
+    stories: [],
+
+    url:""
 
 };
 const a = (state = INITIAL_STATE, action) =>  {

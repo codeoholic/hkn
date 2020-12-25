@@ -2,10 +2,18 @@ import { StyleSheet, Dimensions, Platform } from 'react-native';
 const WHITE = "#FFF";
 const GREY = "#DEDEDE";
 const PRIMARY = "#95196F";
+const BLACK = "#222226";
 
 export default StyleSheet.create({
+	align_middle_view:{
+        alignItems:'center',
+        justifyContent:'center',
+    },
 	color_primary:{
 		color: PRIMARY
+	},
+	color_black:{
+		color: BLACK
 	},
 	flex:{
 		flex: 1,

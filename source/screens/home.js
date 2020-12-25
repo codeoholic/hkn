@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, FlatList, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import { connect } from 'react-redux';
 import styles from '../styles';
 import RNBootSplash from "react-native-bootsplash";
@@ -35,6 +35,12 @@ class Home extends Component{
                     contentContainerStyle={{ marginTop: 0 }}
                 />
             )
+        return(
+            <View style={[ styles.align_middle_view,styles.flex ]}>
+                <ActivityIndicator color="#222226"/>
+                <Text style={[ styles.font_12,styles.margin_top_10, styles.color_black ]}>loading...</Text>
+            </View>
+        )
     }
     render(){
         return(

@@ -13,7 +13,7 @@ class Home extends Component{
     keyExtractor = (item, index) => index.toString();
     render_story = ({item, index}) => {
         return(
-            <TouchableOpacity key={ index } style={ styles.story } onPress={ () => this.props.navigation.navigate("WebViewCustom", { url: item.url }) }>
+            <TouchableOpacity key={ index } style={ styles.story } onPress={ () => this.props.navigation.navigate("WebViewCustom", { url: item.url }) } activeOpacity={ 0.9 }>
                 <Text style={ styles.font_16 }>{ item.title }</Text>
                 <View style={[ styles.margin_top_10, styles.split_view ]}>
                     <Text style={ styles.font_12 }>{ item.score } points</Text>

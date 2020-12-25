@@ -26,7 +26,7 @@ function NavStack() {
             <Stack.Screen
                 name="WebViewCustom"
                 component={WebViewCustom}
-                options={{ headerShown: false, animationEnabled: true }}
+                options={{ headerShown: true, animationEnabled: true, headerTitle: "Story" }}
             />
         </Stack.Navigator>
     );

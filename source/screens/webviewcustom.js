@@ -22,11 +22,6 @@ class WebViewCustom extends Component{
     render(){
         return(
             <SafeAreaView style={ styles.flex }>
-                <View style={[ styles.align_view, styles.header, styles.background_color_white ]}>
-                    <TouchableOpacity onPress={ () => this.props.navigation.goBack() } activeOpacity={ 0.9 } style={ styles.margin_right_20 }>
-                        <Text>back</Text>
-                    </TouchableOpacity>
-                </View>
                 { this.render_progress() }
                 <View style={[ styles.flex, styles.background_color_alabaster ]}>
                     <WebView source={{ uri: this.state.url }} onLoadProgress={({ nativeEvent }) => { this.setState({ progress: nativeEvent.progress }) }}/>

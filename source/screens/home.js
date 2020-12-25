@@ -12,8 +12,9 @@ class Home extends Component{
     }
     keyExtractor = (item, index) => index.toString();
     render_story = ({item, index}) => {
+        const url = (typeof item.url !== "undefined") ? item.url : "https://news.ycombinator.com/item?id=" + item.id;
         return(
-            <TouchableOpacity key={ index } style={ styles.story } onPress={ () => this.props.navigation.navigate("WebViewCustom", { url: item.url }) } activeOpacity={ 0.9 }>
+            <TouchableOpacity key={ index } style={ styles.story } onPress={ () => this.props.navigation.navigate("WebViewCustom", { url: url }) } activeOpacity={ 0.9 }>
                 <Text style={ styles.font_16 }>{ item.title }</Text>
                 <Text style={[ styles.font_12, styles.color_primary, styles.margin_top_5 ]}>{ item.url }</Text>
                 <View style={[ styles.margin_top_5, styles.split_view ]}>

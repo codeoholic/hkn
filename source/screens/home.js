@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, SafeAreaView, Text, View } from 'react-native';
+import { FlatList, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import { connect } from 'react-redux';
 import styles from '../styles';
 
@@ -10,9 +10,9 @@ class Home extends Component{
     keyExtractor = (item, index) => index.toString();
     render_story = ({item, index}) => {
         return(
-            <View key={ index } style={ styles.story }>
+            <TouchableOpacity key={ index } style={ styles.story } onPress={ () => this.props.navigation.navigate("WebViewCustom", { url: item.url }) }>
                 <Text>{ item.title }</Text>
-            </View>
+            </TouchableOpacity>
         )
     }
     render_stories(){

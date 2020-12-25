@@ -4,7 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {
     Home,
-    Splash
+    Splash,
+    WebViewCustom
 } from './screens';
 
 const Stack = createStackNavigator();
@@ -21,6 +22,11 @@ function NavStack() {
                 name="Splash"
                 component={Splash}
                 options={{ headerShown: false, animationEnabled: false }}
+            />
+            <Stack.Screen
+                name="WebViewCustom"
+                component={WebViewCustom}
+                options={{ headerShown: false, animationEnabled: true }}
             />
         </Stack.Navigator>
     );

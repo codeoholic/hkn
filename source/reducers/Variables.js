@@ -1,7 +1,9 @@
 import { CHANGE_VARIABLE } from '../actions/type';
 const INITIAL_STATE = {
 	
-    activity: false
+    activity: false,
+
+    stories: []
 
 };
 const a = (state = INITIAL_STATE, action) =>  {

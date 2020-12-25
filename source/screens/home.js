@@ -1,17 +1,56 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { FlatList, SafeAreaView, Text, View } from 'react-native';
 import { connect } from 'react-redux';
+import styles from '../styles';
 
 class Home extends Component{
     constructor(props) {
         super(props);
     }
-    render(){
+    keyExtractor = (item, index) => index.toString();
+    render_story = ({item, index}) => {
         return(
-            <View>
-                <Text>splash</Text>
+            <View key={ index } style={ styles.story }>
+                <Text>{ item.title }</Text>
             </View>
         )
     }
+    render_stories(){
+        if( this.props.stories.length > 0 )
+            return(
+                <FlatList
+                    data={ this.props.stories }
+                    renderItem={ this.render_story }
+                    keyExtractor={ this.keyExtractor }
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={{ marginTop: 20 }}
+                />
+            )
+    }
+    render(){
+        return(
+            <SafeAreaView style={[ styles.flex ]}>
+                <View>
+                    <Text>this is home</Text>
+                    { this.render_stories() }
+                </View>
+            </SafeAreaView>
+        )
+    }
 }
-export default connect( null )( Home );
+
+const mapStateToProps = (state) =>{
+    const {
+    
+        stories
+
+    } = state.variables;
+    console.log( stories );
+    return {
+        
+        stories
+
+    };
+}
+
+export default connect( mapStateToProps )( Home );

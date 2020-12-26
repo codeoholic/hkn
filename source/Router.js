@@ -49,6 +49,10 @@ const App = ({ activity, url }) => {
                         ),
                         headerRightContainerStyle: {
                             paddingRight: 20
+                        },
+                        headerTitleStyle:{
+                            fontSize: 24,
+                            fontWeight: "700"
                         }
                     }}
                 />

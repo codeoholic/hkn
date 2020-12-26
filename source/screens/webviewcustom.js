@@ -14,7 +14,9 @@ class WebViewCustom extends Component{
             url : this.props.route.params.url,
             progress : 0
         };
-        this.props.change_variable( 'url', this.props.route.params.url);
+    }
+    componentDidMount(){
+        this.props.change_variable( 'url', this.state.url);
     }
     render_progress(){
         const WIDTH = Dimensions.get('window').width * this.state.progress;
